@@ -6,12 +6,12 @@ import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.foodapi.data.NetworkFoodRecipeRepository
-import com.example.foodapi.model.RecipeFood
+import com.example.foodapi.model.Meal
 import kotlinx.coroutines.launch
 import java.io.IOException
 
 sealed interface FoodUiState{
-    data class Success(val recipe:RecipeFood): FoodUiState
+    data class Success(val recipe:Meal): FoodUiState
     object Error: FoodUiState
     object Loading: FoodUiState
 }

@@ -1,6 +1,6 @@
 package com.example.foodapi.network
 
-import com.example.foodapi.model.RecipeFood
+import com.example.foodapi.model.Meal
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import kotlinx.serialization.json.Json
 import okhttp3.MediaType.Companion.toMediaType
@@ -15,7 +15,7 @@ private val retrofit = Retrofit.Builder()
     .build()
 interface FoodApiService{
     @GET("v1/1/random.php")
-    suspend fun getRecipe(): RecipeFood
+    suspend fun getRecipe(): Meal
 }
 object FoodApi{
     val retrofitService: FoodApiService by lazy {
